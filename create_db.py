@@ -1,7 +1,7 @@
 #%%
 import sqlite3
 
-conn = sqlite3.connect("../data/txy.db")
+conn = sqlite3.connect("data/troberta.db")
 c = conn.cursor()
 #%%
 c.execute(

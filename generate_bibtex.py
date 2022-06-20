@@ -1,9 +1,6 @@
 #%%
 import json
 
-db_path = "../data/mtla.json"
-d = json.load(open(db_path))
-d
 # %%
 # import requests
 
@@ -76,39 +73,30 @@ def get_bibtex(title):
 
 
 #%%
-title = d[0]["TITLE"]
-bibtex = get_bibtex(title)
-d[0]["BIBTEX"] = bibtex
-d[0]["BIBTEX"]
-# %%
-import time
-from tqdm import tqdm
-
-start = 0
-#%%
-# start = i
-#%%
-for i in tqdm(range(start, len(d))):
-    start = i
-    title = d[i]["TITLE"]
+if __name__ == "__main__":
+    db_path = "../data/mtla.json"
+    d = json.load(open(db_path))
+    d
+    title = d[0]["TITLE"]
     bibtex = get_bibtex(title)
-    d[i]["BIBTEX"] = bibtex
-    time.sleep(3)
-# %%
-json.dump(d, open("../data/mtla.json", "w"))
-# %%
-db_path = "../data/mtdm.json"
-d = json.load(open(db_path))
+    d[0]["BIBTEX"] = bibtex
+    d[0]["BIBTEX"]
+    import time
+    from tqdm import tqdm
 
-#%%
-file = open("selected.bib", "a+")
-
-# %%
-for one in d:
-    file.write(one["BIBTEX"])
-    file.write("\n")
-# %%
-file.close()
-# %%
-d[-1]
-# %%
+    start = 0
+    for i in tqdm(range(start, len(d))):
+        start = i
+        title = d[i]["TITLE"]
+        bibtex = get_bibtex(title)
+        d[i]["BIBTEX"] = bibtex
+        time.sleep(3)
+    json.dump(d, open("../data/mtla.json", "w"))
+    db_path = "../data/mtdm.json"
+    d = json.load(open(db_path))
+    file = open("selected.bib", "a+")
+    for one in d:
+        file.write(one["BIBTEX"])
+        file.write("\n")
+    file.close()
+    d[-1]

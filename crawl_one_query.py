@@ -124,12 +124,19 @@ class AutoScholar(object):
 
 #%%
 # if __name__ == "__main__":
+# absolute path = '/Users/su/.wdm/drivers/chromedriver/mac64/100.0.4896.60'
 service = Service(executable_path=ChromeDriverManager().install())
+# service = Service(
+#     executable_path="/Users/su/.wdm/drivers/chromedriver/mac64/100.0.4896.60"
+# )
+# service = Service(executable_path=ChromeDriverManager())
+#%%
 driver = webdriver.Chrome(service=service)
 #%%
-a_s = AutoScholar(driver, "../data/txy.db")
+a_s = AutoScholar(driver, "data/troberta.db")
 a_s
 #%%
+# test for crawler connection to google scholar
 a_s.driver.get(
     "https://scholar.google.com/scholar?start=0&hl=en&as_sdt=0%2C5&q=mountain+torrent&btnG="
 )
@@ -146,6 +153,7 @@ a_s.driver.get(
     "https://scholar.google.com/scholar?start=0&hl=en&as_sdt=0%2C5&q=mountain+torrent&btnG="
 )
 # %%
+# some examples for flooad ai
 a_s.crawl("montain flood", 5, True)
 
 # %%
@@ -168,6 +176,7 @@ a_s.crawl("mountain torrents loss assessment", 5, True)
 # %%
 a_s.crawl("hydrological remote sensing", 5, True)
 #%%
+# some example for systemic risk
 a_s.crawl("Macroprudential systemic risk measure machine learning", 5, False)
 
 # %%
@@ -183,6 +192,10 @@ a_s.crawl("Macroprudential systemic risk measure big data", 5, False)
 a_s.crawl("Macroprudential systemic risk measure AI", 5, False)
 # %%
 a_s.crawl("Macroprudential systemic risk measure Artificial Intelligence", 5, False)
-
-
+# %%
+# test for the troberta
+# trajectory representation learning
+# upsupervised pre-training approach
+# transfer learning with supervised finetuning
+a_s.crawl("trajectory representation learning", 5, True)
 # %%
