@@ -1,7 +1,8 @@
 #%%
 import sqlite3
 
-conn = sqlite3.connect("data/troberta.db")
+data_base_name = "knowledge_distillation"
+conn = sqlite3.connect(f"data/{data_base_name}.db")
 c = conn.cursor()
 #%%
 c.execute(

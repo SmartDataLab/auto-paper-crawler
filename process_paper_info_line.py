@@ -211,6 +211,16 @@ import time
 from tqdm import tqdm
 
 start = 0
+#%%
+for i in tqdm(range(start, len(paper_list))):
+    start = i
+    title = paper_list[i]
+    bibtex = get_bibtex(title)
+    bibtex_list.append(bibtex)
+    time.sleep(3)
+#%%
+# dirty string
+start = 16
 for i in tqdm(range(start, len(paper_list))):
     start = i
     title = paper_list[i]
@@ -223,3 +233,4 @@ for one in bibtex_list:
     file.write(one)
     file.write("\n")
 file.close()
+# %%

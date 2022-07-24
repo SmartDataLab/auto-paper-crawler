@@ -133,7 +133,8 @@ service = Service(executable_path=ChromeDriverManager().install())
 #%%
 driver = webdriver.Chrome(service=service)
 #%%
-a_s = AutoScholar(driver, "data/troberta.db")
+data_base_name = "knowledge_distillation"
+a_s = AutoScholar(driver, f"data/{data_base_name}.db")
 a_s
 #%%
 # test for crawler connection to google scholar
@@ -198,4 +199,7 @@ a_s.crawl("Macroprudential systemic risk measure Artificial Intelligence", 5, Fa
 # upsupervised pre-training approach
 # transfer learning with supervised finetuning
 a_s.crawl("trajectory representation learning", 5, True)
+# %%
+a_s.crawl("knowledge distillation remote sensing", 5, True)
+
 # %%
